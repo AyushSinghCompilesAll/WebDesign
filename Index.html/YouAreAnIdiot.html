@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaos Simulator</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            margin: 0;
+        }
+        /* Flashing background effect */
+        .flash {
+            animation: flash-bg 0.5s infinite;
+        }
+        @keyframes flash-bg {
+            0%, 100% { background-color: white; }
+            50% { background-color: black; }
+        }
+        /* The fake bouncing windows */
+        .fake-window {
+            position: absolute;
+            width: 200px;
+            height: 150px;
+            background: #e1e1e1;
+            border: 3px solid #000;
+            box-shadow: 5px 5px 0px #888;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            font-weight: bold;
+        }
+        .window-header {
+            background: #000080;
+            color: white;
+            padding: 2px;
+            margin: -10px -10px 10px -10px;
+            font-size: 12px;
+        }
+        #start-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="start-btn" onclick="startChaos()">Click for Chaos</button>
+
+    <script>
+        let windows = [];
+
+        function startChaos() {
+            // Remove the start button and start the screen flash
+            document.getElementById('start-btn').remove();
+            document.body.classList.add('flash');
+
+            // Spawn initial "windows"
+            for (let i = 0; i < 5; i++) {
+                spawnWindow();
+            }
+
+            // Start the physics/bouncing loop
+            setInterval(updatePhysics, 20);
+        }
+
+        function spawnWindow() {
+            const win = document.createElement('div');
+            win.className = 'fake-window';
+            win.innerHTML = '<div class="window-header">Idiot!</div>⚠️ <br><br>You are an idiot!';
+            
+            // Random initial positions and velocities
+            const data = {
+                element: win,
+                x: Math.random() * (window.innerWidth - 200),
+                y: Math.random() * (window.innerHeight - 150),
+                dx: (Math.random() > 0.5 ? 4 : -4),
+                dy: (Math.random() > 0.5 ? 4 : -4)
+            };
+
+            win.style.left = data.x + 'px';
+            win.style.top = data.y + 'px';
+            
+            document.body.appendChild(win);
+            windows.push(data);
+        }
+
+        function updatePhysics() {
+            const winWidth = window.innerWidth;
+            const winHeight = window.innerHeight;
+
+            windows.forEach(win => {
+                win.x += win.dx;
+                win.y += win.dy;
+
+                // Bounce off left/right walls
+                if (win.x <= 0 || win.x >= winWidth - 200) {
+                    win.dx *= -1;
+                    // Duplication trigger (like the original site multiplying)
+                    if(windows.length < 50) spawnWindow(); 
+                }
+                // Bounce off top/bottom walls
+                if (win.y <= 0 || win.y >= winHeight - 150) {
+                    win.dy *= -1;
+                }
+
+                win.element.style.left = win.x + 'px';
+                win.element.style.top = win.y + 'px';
+            });
+        }
+
+        // Mimic the close prevention: Spawns more if they try to leave or press keys
+        window.onbeforeunload = function() {
+            return "Are you sure you want to leave?";
+        };
+    </script>
+</body>
+</html>
