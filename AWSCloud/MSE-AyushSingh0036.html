@@ -1,12 +1,43 @@
-<!-- git add ., git commit, git push -->
- <!DOCTYPE html>
- <html lang="en">
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSE mogged by me!</title>
- </head>
- <body>
-    <p>Hello, World! alien!!</p>
- </body>
- </html>
+    <title>Document xyz</title>
+    <!-- 1. LINK YOUR CSS STYLESHEET HERE -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 2. WEBSITE VISUAL LAYOUT -->
+    <div class="card">
+        <p>Hello, World! alien!!</p>
+        
+        <!-- These empty slots will be instantly filled by your JSON data -->
+        <h1 id="developer-name">Loading Profile...</h1>
+        <h3 id="developer-role"></h3>
+        <div id="skills-list"></div>
+    </div>
+
+    <!-- 3. JAVASCRIPT CODE TO FETCH DATA FROM DATA.JSON -->
+    <script>
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                // Read values from JSON and inject them into HTML tags
+                document.getElementById('developer-name').innerText = data.user.name;
+                document.getElementById('developer-role').innerText = data.user.role + " | " + data.user.status;
+                
+                // Map skills list dynamically
+                const skillsContainer = document.getElementById('skills-list');
+                data.user.skills.forEach(skill => {
+                    const badge = document.createElement('span');
+                    badge.className = 'badge';
+                    badge.innerText = skill;
+                    skillsContainer.appendChild(badge);
+                });
+            })
+            .catch(error => console.error("Error reading JSON file:", error));
+    </script>
+</body>
+</html>
