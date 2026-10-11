@@ -4,40 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document xyz</title>
-    <!-- 1. LINK YOUR CSS STYLESHEET HERE -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 2. WEBSITE VISUAL LAYOUT -->
-    <div class="card">
+    <!-- THE UPGRADED CARD LAYOUT -->
+    <div class="card" id="profile-card">
+        <!-- Theme Toggle Button -->
+        <button id="theme-btn" onclick="toggleTheme()">☀️ Mode</button>
+
         <p>Hello, World! alien!!</p>
         
-        <!-- These empty slots will be instantly filled by your JSON data -->
+        <!-- Live Data Slots -->
         <h1 id="developer-name">Loading Profile...</h1>
         <h3 id="developer-role"></h3>
         <div id="skills-list"></div>
     </div>
 
-    <!-- 3. JAVASCRIPT CODE TO FETCH DATA FROM DATA.JSON -->
+    <!-- THE REWRITTEN JAVASCRIPT BLOCK -->
     <script>
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                // Read values from JSON and inject them into HTML tags
-                document.getElementById('developer-name').innerText = data.user.name;
-                document.getElementById('developer-role').innerText = data.user.role + " | " + data.user.status;
+        // 1. Fetching data cleanly from data.json
+        async function loadProfileData() {
+            try {
+                const response = await fetch('data.json');
+                if (!response.ok) throw new Error('Could not find data.json');
                 
-                // Map skills list dynamically
+                const data = await response.json();
+                
+                // Inject values into HTML targets safely
+                document.getElementById('developer-name').innerText = data.user.name;
+                document.getElementById('developer-role').innerText = `${data.user.role} | ${data.user.status}`;
+                
+                // Clear loading indicators and render skills array
                 const skillsContainer = document.getElementById('skills-list');
+                skillsContainer.innerHTML = ''; 
+                
                 data.user.skills.forEach(skill => {
                     const badge = document.createElement('span');
                     badge.className = 'badge';
                     badge.innerText = skill;
                     skillsContainer.appendChild(badge);
                 });
-            })
-            .catch(error => console.error("Error reading JSON file:", error));
+            } catch (error) {
+                console.error("Error reading application data:", error);
+                document.getElementById('developer-name').innerText = "Failed to load data";
+            }
+        }
+
+        // 2. Interactive Theme Switcher Logic
+        function toggleTheme() {
+            const body = document.body;
+            const card = document.getElementById('profile-card');
+            const btn = document.getElementById('theme-btn');
+            
+            body.classList.toggle('light-mode');
+            card.classList.toggle('light-card');
+            
+            if (body.classList.contains('light-mode')) {
+                btn.innerText = "🌙 Mode";
+            } else {
+                btn.innerText = "☀️ Mode";
+            }
+        }
+
+        // Initialize application logic immediately on page load
+        window.addEventListener('DOMContentLoaded', loadProfileData);
     </script>
 </body>
 </html>
