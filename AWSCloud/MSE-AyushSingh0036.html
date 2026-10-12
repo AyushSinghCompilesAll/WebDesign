@@ -8,67 +8,6 @@
 </head>
 <body>
 
-    <!-- THE UPGRADED CARD LAYOUT -->
-    <div class="card" id="profile-card">
-        <!-- Theme Toggle Button -->
-        <button id="theme-btn" onclick="toggleTheme()">☀️ Mode</button>
-
-        <p>Hello, World! alien!!</p>
-        
-        <!-- Live Data Slots -->
-        <h1 id="developer-name">Loading Profile...</h1>
-        <h3 id="developer-role"></h3>
-        <div id="skills-list"></div>
-    </div>
-
-    <!-- THE REWRITTEN JAVASCRIPT BLOCK -->
-    <script>
-        // 1. Fetching data cleanly from data.json
-        async function loadProfileData() {
-            try {
-                const response = await fetch('data.json');
-                if (!response.ok) throw new Error('Could not find data.json');
-                
-                const data = await response.json();
-                
-                // Inject values into HTML targets safely
-                document.getElementById('developer-name').innerText = data.user.name;
-                document.getElementById('developer-role').innerText = `${data.user.role} | ${data.user.status}`;
-                
-                // Clear loading indicators and render skills array
-                const skillsContainer = document.getElementById('skills-list');
-                skillsContainer.innerHTML = ''; 
-                
-                data.user.skills.forEach(skill => {
-                    const badge = document.createElement('span');
-                    badge.className = 'badge';
-                    badge.innerText = skill;
-                    skillsContainer.appendChild(badge);
-                });
-            } catch (error) {
-                console.error("Error reading application data:", error);
-                document.getElementById('developer-name').innerText = "Failed to load data";
-            }
-        }
-
-        // 2. Interactive Theme Switcher Logic
-        function toggleTheme() {
-            const body = document.body;
-            const card = document.getElementById('profile-card');
-            const btn = document.getElementById('theme-btn');
-            
-            body.classList.toggle('light-mode');
-            card.classList.toggle('light-card');
-            
-            if (body.classList.contains('light-mode')) {
-                btn.innerText = "🌙 Mode";
-            } else {
-                btn.innerText = "☀️ Mode";
-            }
-        }
-
-        // Initialize application logic immediately on page load
-        window.addEventListener('DOMContentLoaded', loadProfileData);
-    </script>
+    <p>Hi</p>
 </body>
 </html>
