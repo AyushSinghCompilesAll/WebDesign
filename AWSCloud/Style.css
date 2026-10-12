@@ -1,7 +1,7 @@
 
 p {
     font-size: 24px;
-    background: linear-gradient(45deg, #ff007f, #7f00ff);
+    background: linear-gradient(45deg, #e1b997, #00aaff);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -9,7 +9,7 @@ p {
 }
 h {
     font-size: 36px;
-    background: linear-gradient(45deg, #ff007f, #7f00ff);
+    background: linear-gradient(45deg, #715462, #e98a8a);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -17,14 +17,14 @@ h {
 }
 tr {
     font-size: 18px;
-    background: linear-gradient(45deg, #ff007f, #7f00ff);
+    background: linear-gradient(45deg, #ab36c8, #17c11f);
     background-clip: text;
     -webkit-background-clip: text;
     font-weight: bold;
 }
 h1 {
     font-size: 48px;
-    background: linear-gradient(45deg, #ff007f, #7f00ff);
+    background: linear-gradient(45deg, #d396e2, #a6ff00);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -40,7 +40,7 @@ h2 {
 }
 h3 {
     font-size: 24px;
-    background: linear-gradient(45deg, #ff007f, #7f00ff);
+    background: linear-gradient(45deg, #5fde8e, #fff200);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -48,7 +48,7 @@ h3 {
 }
 h4 {
     font-size: 18px;
-    background: linear-gradient(45deg, #ff007f, #7f00ff);
+    background: linear-gradient(45deg, #667682, #ff0000);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -56,7 +56,7 @@ h4 {
 }
 i {
     font-size: 18px;
-    background: linear-gradient(45deg, #ff007f, #7f00ff);
+    background: linear-gradient(45deg, #eaff00, #8000ff);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
