@@ -1,4 +1,3 @@
-    <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
@@ -46,7 +45,6 @@
             color: #cc6600;
         }
 
-        /* Main Wrapper Container */
         #container {
             width: 96%;
             max-width: 1000px;
@@ -56,7 +54,6 @@
             padding: 20px;
         }
 
-        /* Section Headings */
         h2.section-title {
             background-color: #eeeeee;
             color: #003366;
@@ -70,7 +67,6 @@
             border-bottom: 1px solid #dddddd;
         }
 
-        /* Classic Two-Column Section Layout using Basic Divs */
         .card-row {
             margin-bottom: 15px;
             border: 1px solid #cccccc;
@@ -92,7 +88,6 @@
             margin-bottom: 8px;
         }
 
-        /* Plain Web Tables Layout */
         table.data-table {
             width: 100%;
             border-collapse: collapse;
@@ -118,7 +113,6 @@
             background-color: #f9f9f9;
         }
 
-        /* Lists Styling */
         ul.plain-list, ol.plain-list {
             margin: 8px 0;
             padding-left: 25px;
@@ -129,7 +123,6 @@
             margin-bottom: 5px;
         }
 
-        /* Basic Web Form Styling */
         .form-table {
             width: 100%;
             font-size: 13px;
@@ -162,7 +155,6 @@
             background-color: #bb5500;
         }
 
-        /* Footer Section */
         #footer {
             background-color: #222222;
             color: #cccccc;
@@ -185,4 +177,3 @@
             font-size: 12px;
             margin-bottom: 15px;
         }
-    </style>
