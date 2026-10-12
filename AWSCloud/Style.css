@@ -1,75 +1,188 @@
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #222222;
+            line-height: 1.5;
+        }
 
-p {
-    font-size: 24px;
-    background: linear-gradient(45deg, #e1b997, #00aaff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-}
-h {
-    font-size: 36px;
-    background: linear-gradient(45deg, #715462, #e98a8a);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-}
-tr {
-    font-size: 18px;
-    background: linear-gradient(45deg, #ab36c8, #17c11f);
-    background-clip: text;
-    -webkit-background-clip: text;
-    font-weight: bold;
-}
-h1 {
-    font-size: 48px;
-    background: linear-gradient(45deg, #d396e2, #a6ff00);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-}
-h2 {
-    font-size: 36px;
-    background: linear-gradient(45deg, #ff007f, #7f00ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-}
-h3 {
-    font-size: 24px;
-    background: linear-gradient(45deg, #5fde8e, #fff200);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-}
-h4 {
-    font-size: 18px;
-    background: linear-gradient(45deg, #667682, #ff0000);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-}
-i {
-    font-size: 18px;
-    background: linear-gradient(45deg, #eaff00, #8000ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-}
-b {
-    font-size: 18px;
-    background: linear-gradient(45deg, #ff007f, #7f00ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-}
-* {
-    background-color:#aaaea6
-}
+        #header {
+            background-color: #003366;
+            color: #ffffff;
+            padding: 15px 20px;
+            border-bottom: 4px solid #cc6600;
+        }
+
+        #header h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        #header p {
+            margin: 5px 0 0 0;
+            font-size: 13px;
+            color: #ffcc66;
+        }
+
+        #nav {
+            background-color: #e0e0e0;
+            padding: 8px 20px;
+            border-bottom: 1px solid #cccccc;
+            font-size: 14px;
+        }
+
+        #nav a {
+            color: #003366;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        #nav a:hover {
+            text-decoration: underline;
+            color: #cc6600;
+        }
+
+        /* Main Wrapper Container */
+        #container {
+            width: 96%;
+            max-width: 1000px;
+            margin: 15px auto;
+            background-color: #ffffff;
+            border: 1px solid #bbbbbb;
+            padding: 20px;
+        }
+
+        /* Section Headings */
+        h2.section-title {
+            background-color: #eeeeee;
+            color: #003366;
+            padding: 6px 10px;
+            border-left: 5px solid #cc6600;
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-top: 1px solid #dddddd;
+            border-right: 1px solid #dddddd;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        /* Classic Two-Column Section Layout using Basic Divs */
+        .card-row {
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            padding: 12px;
+            background-color: #fafafa;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 4px;
+        }
+
+        .card-subtitle {
+            font-size: 12px;
+            color: #666666;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        /* Plain Web Tables Layout */
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        table.data-table th {
+            background-color: #003366;
+            color: #ffffff;
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #002244;
+        }
+
+        table.data-table td {
+            padding: 8px;
+            border: 1px solid #cccccc;
+        }
+
+        table.data-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Lists Styling */
+        ul.plain-list, ol.plain-list {
+            margin: 8px 0;
+            padding-left: 25px;
+            font-size: 13px;
+        }
+
+        ul.plain-list li, ol.plain-list li {
+            margin-bottom: 5px;
+        }
+
+        /* Basic Web Form Styling */
+        .form-table {
+            width: 100%;
+            font-size: 13px;
+        }
+
+        .form-table td {
+            padding: 6px;
+            vertical-align: top;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 95%;
+            padding: 5px;
+            border: 1px solid #888888;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        .form-submit-btn {
+            background-color: #cc6600;
+            color: #ffffff;
+            border: 1px solid #994400;
+            padding: 8px 18px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .form-submit-btn:hover {
+            background-color: #bb5500;
+        }
+
+        /* Footer Section */
+        #footer {
+            background-color: #222222;
+            color: #cccccc;
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+            border-top: 3px solid #003366;
+            margin-top: 30px;
+        }
+
+        #footer a {
+            color: #ffcc66;
+            text-decoration: none;
+        }
+
+        .notice-box {
+            background-color: #ffffcc;
+            border: 1px solid #e6e600;
+            padding: 10px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+    </style>

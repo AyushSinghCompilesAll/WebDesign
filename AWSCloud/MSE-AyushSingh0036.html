@@ -1,143 +1,390 @@
-<!DOCTYPE html> 
-<html> 
-    <head> 
-        <link rel="stylesheet"href="Style.css"/>
-        <title>Travel and Tourism Website</title>
-        <link href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ6bYeEQRVwQFHIDJTMjxsYoNL12P91Y7AkafY5y81Lw&s=10" rel="icon">
-    </head> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring India - Travel & Tourism Portal</title>
+    <style>
+        /* Classic Web Styling - Clean, Low-level, Plain CSS Layout */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #222222;
+            line-height: 1.5;
+        }
 
-<body>  
+        /* Top Banner Header */
+        #header {
+            background-color: #003366;
+            color: #ffffff;
+            padding: 15px 20px;
+            border-bottom: 4px solid #cc6600;
+        }
 
-    
-    <header> 
-        <h1>Exploring India</h1> 
-        <p><i>Exploring the popular destinations in India.</i></p> 
-        <hr> 
-    </header> 
+        #header h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: bold;
+        }
 
-    
-    <section> 
-        <h2>About India</h2> 
-        <p><b>India</b> not just country but a land of diverse cultures, traditions, and breathtaking landscapes.</p> 
-    </section> 
+        #header p {
+            margin: 5px 0 0 0;
+            font-size: 13px;
+            color: #ffcc66;
+        }
 
-    
-    <section>
-        <h2>Top Travel Destinations</h2> 
-        <hr>
-        <h3>Shimla</h3> 
-        <p><b>State:</b> Himachal Pradesh</p> 
-        <p>Shimla snow-capped mountains pine trees colonial architecture</p> 
-        <p><i>Interesting Fact:</i> Shimla was the summer capital of British India</p> 
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQIQYUCHLscMyW1WJqlYfCLeEUy78O2hTWDSZ9KbaaPQ&s=10" alt="Shimla Image" width="200">
+        /* Navigation Bar */
+        #nav {
+            background-color: #e0e0e0;
+            padding: 8px 20px;
+            border-bottom: 1px solid #cccccc;
+            font-size: 14px;
+        }
 
-        
-        <h3>Jaipur</h3>
-        <p><b>State:</b> Rajasthan</p>
-        <p>Jaipur cosmic city observatory still track stars stone tools</p>
-        <p><i>Interesting Fact:</i> Jaipur is known as the Pink City due to its distinct pink-colored buildings</p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQIQYUCHLscMyW1WJqlYfCLeEUy78O2hTWDSZ9KbaaPQ&s=10" alt="Jaipur Image" width="200">
-        
-        <h3>Goa</h3>
-        <p><b>State:</b> Goa</p>
-        <p>Goa beach sun sand coconut palm waves</p>
-        <p><i>Interesting Fact:</i> Goa was a Portuguese colony until 1961</p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKAwNaV7VFt0w2VFZ790LnepTZfbwRUGBeBFOl1bVbXg&s=10" alt="Goa Image" width="200">
+        #nav a {
+            color: #003366;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 15px;
+        }
 
-        
-        <h3>Agra</h3>
-        <p><b>State:</b> Uttar Pradesh</p>
-        <p>Agra marble breath taj mahal glow different time day canvas of love</p>
-        <p><i>Interesting Fact:</i> artisans carved taj mahal with gems that shine under moonlight</p>
-         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiIC-86JGFHhMkpR0NWvifMB80HJz8tSkKw7OX0kf3Vw&s=10" alt="Agra Image" width="200">
+        #nav a:hover {
+            text-decoration: underline;
+            color: #cc6600;
+        }
 
+        /* Main Wrapper Container */
+        #container {
+            width: 96%;
+            max-width: 1000px;
+            margin: 15px auto;
+            background-color: #ffffff;
+            border: 1px solid #bbbbbb;
+            padding: 20px;
+        }
 
-        
-        <h3>Keralam</h3>
-        <p><b>State:</b> Kerala</p>
-        <p>Kerala backwaters houseboats coconut palms ayurvedic massage</p>
-        <p><i>Interesting Fact:</i> Kerala is known as "God's Own Country" due to its natural beauty and rich cultural heritage</p>
-         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ8JGqbHJ5r1oGcyfe7BsAEGBMFL8Ry5D1r9mjcbN1jw&s=10" alt="Keralam Image" width="200">
+        /* Section Headings */
+        h2.section-title {
+            background-color: #eeeeee;
+            color: #003366;
+            padding: 6px 10px;
+            border-left: 5px solid #cc6600;
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-top: 1px solid #dddddd;
+            border-right: 1px solid #dddddd;
+            border-bottom: 1px solid #dddddd;
+        }
 
-    </section>
+        /* Classic Two-Column Section Layout using Basic Divs */
+        .card-row {
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            padding: 12px;
+            background-color: #fafafa;
+        }
 
-    
-    <section>
-        <h2>Travel Packages</h2> 
-        <table border="1"> 
-            <tr>
-                <th>Destination</th>
-                <th>Duration</th>
-                <th>Package Type</th>
-                <th>Approx. Cost</th>
-            </tr>
-            <tr>
-                <td>Shimla</td>
-                <td>3 Days</td>
-                <td>Adventure</td>
-                <td>₹15,000</td>
-            </tr>
-            <tr>
-                <td>Goa</td>
-                <td>4 Days</td>
-                <td>Beach</td>
-                <td>₹20,000</td>
-            </tr>
-            <tr>
-                <td>Jaipur</td>
-                <td>3 Days</td>
-                <td>Cultural</td>
-                <td>₹18,000</td>
-            </tr>
-            <tr>
-                <td>Agra</td>
-                <td>2 Days</td>
-                <td>Historical</td>
-                <td>₹12,000</td>
-            </tr>
-            <tr>
-                <td>Keralam</td>
-                <td>5 Days</td>
-                <td>Relaxation</td>
-                <td>₹25,000</td>
-        </table>
-    </section>
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 4px;
+        }
 
-    
-    <section>
-        <h2>Things to Carry</h2>
-        <ul>
-            <li>Comfortable clothing</li>
-            <li>Travel documents</li>
-            <li>Camera</li>
-            <li>First aid kit</li>
-            <li>Snacks and water</li>
+        .card-subtitle {
+            font-size: 12px;
+            color: #666666;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        /* Plain Web Tables Layout */
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        table.data-table th {
+            background-color: #003366;
+            color: #ffffff;
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #002244;
+        }
+
+        table.data-table td {
+            padding: 8px;
+            border: 1px solid #cccccc;
+        }
+
+        table.data-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Lists Styling */
+        ul.plain-list, ol.plain-list {
+            margin: 8px 0;
+            padding-left: 25px;
+            font-size: 13px;
+        }
+
+        ul.plain-list li, ol.plain-list li {
+            margin-bottom: 5px;
+        }
+
+        /* Basic Web Form Styling */
+        .form-table {
+            width: 100%;
+            font-size: 13px;
+        }
+
+        .form-table td {
+            padding: 6px;
+            vertical-align: top;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 95%;
+            padding: 5px;
+            border: 1px solid #888888;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        .form-submit-btn {
+            background-color: #cc6600;
+            color: #ffffff;
+            border: 1px solid #994400;
+            padding: 8px 18px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .form-submit-btn:hover {
+            background-color: #bb5500;
+        }
+
+        /* Footer Section */
+        #footer {
+            background-color: #222222;
+            color: #cccccc;
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+            border-top: 3px solid #003366;
+            margin-top: 30px;
+        }
+
+        #footer a {
+            color: #ffcc66;
+            text-decoration: none;
+        }
+
+        .notice-box {
+            background-color: #ffffcc;
+            border: 1px solid #e6e600;
+            padding: 10px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h1>Exploring India</h1>
+        <p>Official Travel & Tourism Portal — Discover Incredible Destinations & Packages</p>
+    </div>
+
+    <div id="container">
+
+        <div class="notice-box">
+            <b>Welcome Traveler!</b> Explore popular Indian destinations including Shimla, Jaipur, Goa, Agra, and Keralam. View complete itineraries, costs, packing guidance, and submit direct travel queries below.
+        </div>
+
+        <h2 class="section-title" id="destinations">1. Popular Destinations</h2>
+
+        <div class="card-row">
+            <div class="card-title">Shimla</div>
+            <div class="card-subtitle">State: Himachal Pradesh | Best Time: October to June</div>
+            <p><b>Description:</b> Known as the 'Queen of Hills', Shimla features pine-clad mountain slopes, historic colonial architecture, vibrant markets, and snow-capped Himalayan peaks.</p>
+            <p><b>Key Highlights:</b> The Ridge, Mall Road Walk, Kufri Snow Park, Jakhoo Temple Ropeway, and the historic Kalka-Shimla Toy Train ride.</p>
+        </div>
+
+        <div class="card-row">
+            <div class="card-title">Jaipur</div>
+            <div class="card-subtitle">State: Rajasthan | Best Time: October to March</div>
+            <p><b>Description:</b> The Royal 'Pink City' of Rajasthan is renowned for its grand hilltop fortresses, palatial royal residences, traditional folklore, and vibrant handicraft bazaars.</p>
+            <p><b>Key Highlights:</b> Amber Fort, Hawa Mahal (Palace of Winds), City Palace museum, Jantar Mantar observatory, and Chokhi Dhani cultural village.</p>
+        </div>
+
+        <div class="card-row">
+            <div class="card-title">Goa</div>
+            <div class="card-subtitle">State: Goa | Best Time: November to February</div>
+            <p><b>Description:</b> Famous worldwide for its golden sandy beaches, coconut groves, Portuguese heritage, bustling flea markets, and water adventure activities.</p>
+            <p><b>Key Highlights:</b> Baga and Calangute Beaches, Dudhsagar Waterfalls trek, Old Goa Portuguese Cathedrals, and Mandovi River sunset cruise.</p>
+        </div>
+
+        <div class="card-row">
+            <div class="card-title">Agra</div>
+            <div class="card-subtitle">State: Uttar Pradesh | Best Time: October to March</div>
+            <p><b>Description:</b> Located along the Yamuna river, Agra stands as a iconic monument to Mughal architectural genius and historical heritage.</p>
+            <p><b>Key Highlights:</b> Sunrise view of Taj Mahal, Agra Fort UNESCO World Heritage site, Mehtab Bagh gardens, and classic Agra Petha sweet tasting.</p>
+        </div>
+
+        <div class="card-row">
+            <div class="card-title">Keralam (Kerala)</div>
+            <div class="card-subtitle">State: Kerala | Best Time: September to March</div>
+            <p><b>Description:</b> Known as 'God's Own Country', featuring tranquil backwaters, lush green tea garden hills in Munnar, pristine coastal beaches, and traditional Ayurveda wellness.</p>
+            <p><b>Key Highlights:</b> Overnight Alleppey luxury houseboat cruise, Munnar tea plantation tours, authentic Ayurvedic massages, and Kathakali dance performances.</p>
+        </div>
+
+        <h2 class="section-title" id="facts">2. Interesting Facts About India</h2>
+        <ul class="plain-list">
+            <li><b>Architectural Wonder:</b> The Taj Mahal in Agra was constructed using white marble transported from across India and Asia over two decades.</li>
+            <li><b>Kalka-Shimla Railway:</b> The Toy Train route features over 800 bridges and 103 tunnels through scenic Himalayan mountains.</li>
+            <li><b>Lush Hill Stations:</b> Munnar in Keralam contains some of the world's highest tea plantations situated above sea level.</li>
+            <li><b>Living Heritage:</b> Rajasthan's Jaipur is home to the world's largest stone sundial, Jantar Mantar, built in 1734.</li>
+            <li><b>Coastal History:</b> Goa retains over 450 years of Portuguese cultural influence visible in its historic churches and cuisine.</li>
         </ul>
 
-        <h2>Travel Tips</h2>
-        <ol>
-            <li>Plan your itinerary in advance.</li>
-            <li>Check the weather conditions of your destination.</li>
-            <li>Respect local customs and traditions.</li>
-            <li>Keep emergency contacts handy.</li>
-            <li>Stay hydrated and take breaks during long journeys.</li>
+        <h2 class="section-title" id="packages">3. Travel Packages Table</h2>
+        <p style="font-size: 13px;">Compare available tour packages, trip durations, and estimated starting costs:</p>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Destination</th>
+                    <th>State</th>
+                    <th>Duration</th>
+                    <th>Included Key Attractions</th>
+                    <th>Price (INR)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Shimla Tour</b></td>
+                    <td>Himachal Pradesh</td>
+                    <td>3 Days / 2 Nights</td>
+                    <td>Mall Road, Kufri, Jakhoo Ropeway</td>
+                    <td>₹15,000</td>
+                </tr>
+                <tr>
+                    <td><b>Jaipur Heritage</b></td>
+                    <td>Rajasthan</td>
+                    <td>3 Days / 2 Nights</td>
+                    <td>Amber Fort, Hawa Mahal, City Palace</td>
+                    <td>₹18,000</td>
+                </tr>
+                <tr>
+                    <td><b>Goa Beach Escape</b></td>
+                    <td>Goa</td>
+                    <td>4 Days / 3 Nights</td>
+                    <td>Baga Beach, Dudhsagar, River Cruise</td>
+                    <td>₹20,000</td>
+                </tr>
+                <tr>
+                    <td><b>Agra Taj Express</b></td>
+                    <td>Uttar Pradesh</td>
+                    <td>2 Days / 1 Night</td>
+                    <td>Taj Mahal, Agra Fort, Mehtab Bagh</td>
+                    <td>₹12,000</td>
+                </tr>
+                <tr>
+                    <td><b>Keralam Backwaters</b></td>
+                    <td>Kerala</td>
+                    <td>5 Days / 4 Nights</td>
+                    <td>Alleppey Houseboat, Munnar Tea Hills</td>
+                    <td>₹25,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="section-title" id="checklist">4. Things to Carry List</h2>
+        <p style="font-size: 13px;">Essential checklist for your trip across India:</p>
+        <ul class="plain-list">
+            <li>Government-issued Identification Card / Passport / Visa Copies</li>
+            <li>Comfortable walking shoes & weather-appropriate clothing (Warm layers for Shimla; light cottons for Goa/Kerala)</li>
+            <li>Universal power adapter, phone charger, and portable power bank</li>
+            <li>Sunscreen lotion, sunglasses, and mosquito repellent cream</li>
+            <li>Basic first-aid medical kit and personal prescribed medications</li>
+            <li>Reusable water bottle and hand sanitizer</li>
+        </ul>
+
+        <h2 class="section-title" id="tips">5. Travel Tips</h2>
+        <ol class="plain-list">
+            <li><b>Documentation:</b> Always carry physical printouts and digital backups of your ID cards, train/flight tickets, and hotel bookings.</li>
+            <li><b>Currency:</b> Carry a mix of local cash (Indian Rupees) and digital payment apps or cards, especially when visiting small local shops and rural areas.</li>
+            <li><b>Dress Code:</b> Dress modestly when visiting religious heritage temples or historical shrines; remove footwear where required.</li>
+            <li><b>Hydration:</b> Use sealed bottled or purified drinking water throughout your journey.</li>
+            <li><b>Local Transport:</b> Use licensed taxis, verified ride apps, or local government tourist desks when booking local transport.</li>
         </ol>
-    </section>
 
-    
-    <section>
-        <h2>Travel Enquiry Form</h2>
-        <form>
-            <label>Full Name :</label>
-            <input type="text" name="fullname"><br><br>
+        <h2 class="section-title" id="enquiry">6. Travel Enquiry Form</h2>
+        <p style="font-size: 13px;">Fill out the form below to receive detailed booking assistance and travel custom quotes:</p>
 
-            <label>Email :</label>
-            <input type="email" name="email"><br><br>
-            <label>Mobile Number :</label>
-            <input type="tel" name="mobile"><br><br>
-            <label>Message :</label>
-            <textarea name="message"></textarea><br><br>
-            <input type="submit" value="Submit">
+        <form action="#" method="get" onsubmit="alert('Thank you! Your travel enquiry has been recorded.'); return false;">
+            <table class="form-table">
+                <tr>
+                    <td width="25%"><b>Full Name:</b></td>
+                    <td><input type="text" name="fullname" class="form-input" required placeholder="Enter your full name"></td>
+                </tr>
+                <tr>
+                    <td><b>Email Address:</b></td>
+                    <td><input type="email" name="email" class="form-input" required placeholder="name@example.com"></td>
+                </tr>
+                <tr>
+                    <td><b>Phone Number:</b></td>
+                    <td><input type="tel" name="phone" class="form-input" required placeholder="+91 9876543210"></td>
+                </tr>
+                <tr>
+                    <td><b>Select Destination:</b></td>
+                    <td>
+                        <select name="destination" class="form-select" required>
+                            <option value="">-- Choose Destination --</option>
+                            <option value="Shimla">Shimla (Himachal Pradesh)</option>
+                            <option value="Jaipur">Jaipur (Rajasthan)</option>
+                            <option value="Goa">Goa (Beaches)</option>
+                            <option value="Agra">Agra (Uttar Pradesh)</option>
+                            <option value="Keralam">Keralam (Kerala)</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Travel Date:</b></td>
+                    <td><input type="date" name="travel_date" class="form-input" required></td>
+                </tr>
+                <tr>
+                    <td><b>Number of Guests:</b></td>
+                    <td><input type="number" name="guests" min="1" max="20" value="2" class="form-input" style="width: 100px;"></td>
+                </tr>
+                <tr>
+                    <td><b>Special Remarks:</b></td>
+                    <td><textarea name="remarks" rows="4" class="form-textarea" placeholder="Specify hotel choices, food preferences, or specific queries..."></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit" class="form-submit-btn">Submit Enquiry</button>
+                        <button type="reset" class="form-submit-btn" style="background-color: #666666; border-color: #444444; margin-left: 10px;">Reset Form</button>
+                    </td>
+                </tr>
+            </table>
         </form>
-    </section>
-    <p>Made by Ayush Singh</p>
+
+    </div>
+
+    <div id="footer">
+        <p>© 2026 Exploring India Tourism Portal. All Rights Reserved.</p>
+        <p>Made by <b>Ayush Singh</b></p>
+    </div>
+
+</body>
+</html>
